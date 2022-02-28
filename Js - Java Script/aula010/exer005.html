@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menos Calculate</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,700;1,900&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            font-family:Poppins,Arial, Helvetica, sans-serif;
+        }
+        #maindiv {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            flex-direction: column;
+            background-color: rgb(71, 16, 126);
+        }
+        input {
+            margin-top: 20px;
+            border-radius: 8px;
+            border: 0;
+        }
+        .input {
+            text-align: center;
+            width: 200px;
+            height: 30px;
+            box-shadow: rgb(17, 2, 33) 4px 4px 4px;
+            color: rgb(17, 2, 33);
+        }
+        #botao {
+            width: 250px;
+            height: 30px;
+            box-shadow: rgb(17, 2, 33) 4px 4px 4px;
+            color: rgb(17, 2, 33);
+            cursor: pointer;
+        }
+        #resultado {
+            margin-top: 20px;
+            background-color: white;
+            width: 400px;
+            height: 80px;
+            text-align: center;
+            line-height: 80px;
+            border-radius: 8px;
+            box-shadow: rgb(17, 2, 33) 4px 4px 4px;
+            color: rgb(17, 2,33);
+        }
+    </style>
+</head>
+<body>
+    <div id="maindiv">
+    <h1>Menos Calculate Exer</h1> 
+    <input type="number" name="num1" id="number1" placeholder="Digite um número" class="input">
+    <input type="number" name="num2" id="number2" placeholder="Digite um número" class="input">
+    <input type="button" name="botao" id="botao" value="Calcular"> 
+    <div id="resultado"> Resultado</div>
+    </div>
+
+    <script>
+        var div = window.document.getElementById('maindiv')
+        var num1 = window.document.getElementById('number1'); 
+        var num2 = window.document.getElementById('number2'); 
+        var calcular = window.document.getElementById('botao');
+        var mostrar = window.document.getElementById('resultado'); 
+
+        calcular.addEventListener('click', calculate); 
+        function calculate() {
+            var n1 = Number(num1.value);
+            var n2 = Number(num2.value);
+            var res = n1 - n2; 
+
+            mostrar.innerText = `A subtração dos números ${n1} e ${n2} é igual a ${res}`;
+            div.style.background = 'rgb(162, 78, 252)';
+            
+            mostrar.addEventListener('mouseout', voltar); 
+            function voltar(){
+            mostrar.innerText = `Resultado`;
+            div.style.background = 'rgb(71, 16, 126)';
+        }
+    }
+        
+    </script>
+</body>
+</html>

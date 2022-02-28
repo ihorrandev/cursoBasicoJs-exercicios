@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exer</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,700;1,900&display=swap');
+        body {
+            font-family: Poppins, Arial, Helvetica, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-color: rgb(38, 88, 214);
+            color: white;
+        }
+        input {
+            margin-top: 15px;
+            width: 300px;
+            border-radius: 8px;
+            border: none;
+            height: 30px;
+            font-family: Poppins, Arial, Helvetica, sans-serif;
+            box-shadow: 2px 4px 4px  rgb(7, 39, 80) ;
+        }
+        #res {
+            display: flex;
+            margin-top: 20px;
+            background-color: white;
+            width: 250px;
+            height:50px;
+            justify-content: center;
+            align-items: center;
+            font-weight: 600;
+            border-radius: 8px;
+            padding: 7px;
+            box-shadow: 2px 4px 4px  rgb(7, 39, 80) ;
+            color: rgb(24, 24, 24);
+        }
+    </style>
+
+</head>
+<body>
+    <h1> Somando valores </h1>
+    <input type="number" id="txtn1" name="txtn1">
+    <input type="number" id="txtn2" name="txtn2"> 
+    <input type="button" id="enviar" value="Somar">
+    <div id="res"> RESULTADO</div>
+
+    <script>
+        var num1 = window.document.getElementById('txtn1');
+        var num2 = window.document.getElementById('txtn2');
+        var res = window.document.getElementById ('res');
+        var botao = window.document.getElementById('enviar');
+
+        botao.addEventListener('click',somar)
+        function somar() {
+            var n1 = Number(num1.value);
+            var n2 = Number(num2.value);
+            var s = n1 + n2;
+            res.innerHTML= `A soma entre os números: ${n1} e ${n2} é igual a ${s}`
+        }
+    </script>
+</body>
+</html>

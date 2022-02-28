@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detran</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,700;1,900&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Poppins, Arial, Helvetica, sans-serif;
+        }
+        #main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgb(187, 145, 245);
+            width: 100%;
+            height: 100vh;
+        }
+        #txtvel {
+            border: 0;
+            border-radius: 5px;
+            width: 200px;
+            height: 30px;
+            margin-bottom: 20px;
+            box-shadow: rgb(116, 97, 162) 3px 3px 1px;
+            text-align: center;
+        }
+        #ver {
+            border: 0;
+            border-radius: 5px;
+            width: 100px;
+            cursor: pointer;
+            height: 30px;
+            margin-bottom: 20px;
+            box-shadow: rgb(116, 97, 162) 3px 3px 1px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+    <h1 id="titttle">Sistemas de Multas!</h1>
+    Velocidade do carro: (Km/h) <input type="number" name="vel" id="txtvel" placeholder="Velocidade">
+    <input type="button" value="Verificar" id="ver">
+    <div id="res"></div>
+    </div>
+    <script>
+        var ver = window.document.getElementById('ver'); 
+        var res = window.document.getElementById('res');
+        
+        ver.addEventListener('click', calcular); 
+        function calcular(){
+            var vel = window.document.getElementById('txtvel'); 
+            var vel = Number(vel.value);
+
+            if(vel>60){
+                res.innerHTML = `Sua velocidade é de ${vel}km/h e você <strong>ultrapassou</strong> o limite de km´s<br>MULTADO(a)!!</br>`
+                window.document.getElementById('main').style.backgroundColor = 'rgb(238, 139, 139)'
+                var img = document.createElement('img');
+                img.setAttribute('src', 'tururu.jpg');
+                res.appendChild(img)
+                img.style.marginLeft = '130px'
+                
+            }else {
+                res.innerHTML = `Sua velocidade é de ${vel}km/h e você <strong>não</strong> ultrapassou o limite de Km´s`
+            }
+        }
+    </script>
+
+</body>
+</html>
